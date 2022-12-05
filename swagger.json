@@ -1,0 +1,183 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "My User Project CRUD",
+        "description": "My User Project Application API",
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        }
+    },
+    "host": "localhost:3000",
+    "basePath": "/",
+    "tags": [
+        {
+            "name": "Place",
+            "description": "API for CRUD Operation in the system"
+        }
+    ],
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/place/all": {
+            "get": {
+                "tags": [
+                    "Import data from API to mongoDB"
+                ],
+                "summary": "Import Data",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "import Data from API"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "This service allows you import DATA from API."
+                    }
+                }
+            }
+        },
+        "/place/getbyid": {
+            "get": {
+                "tags": [
+                    "Retrieve Service"
+                ],
+                "summary": "Get place by id",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Row with ID Number to retrieve"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "This service allows you to retrieve an number by ID."
+                    }
+                }
+            }
+        },
+        "/place/delete": {
+            "delete": {
+                "tags": [
+                    "Delete Service"
+                ],
+                "summary": "delete by id",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Row with ID Number to delete"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "This service allows you to delete an number by ID."
+                    }
+                }
+            }
+       
+        },
+        "/place/update": {
+            "put": {
+                "tags": [
+                    "Update Service"
+                ],
+                "summary": "update by id",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Row with ID Number to update"
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "query",
+                        "description": "Data with user_id to update"
+                    },
+                    {
+                        "name": "title",
+                        "in": "query",
+                        "description": "Data with title to update"
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "description": "Data with description to update"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "This service allows you to update an number by ID."
+                    }
+                }
+            }
+        },
+        "/place/create": {
+            "post": {
+                "tags": [
+                    "Add New Data to DB"
+                ],
+                "summary": "Get place by id",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Add Data with ID Number"
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "query",
+                        "description": "Add Data with user_id"
+                    },
+                    {
+                        "name": "title",
+                        "in": "query",
+                        "description": "Add Data with title"
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "description": "Add Data with description"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "This service allows you to create a new document."
+                    }
+                }
+            }
+        },
+        "/place/deleteall": {
+            "delete": {
+                "tags": [
+                    "Delete Complete Data from Database"
+                ],
+                "summary": "Delete Data base",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Delete Data from Database"
+                    }
+                    
+                ],
+                "responses": {
+                    "200": {
+                        "description": "This service allows you to delete DATA from database."
+                    }
+                }
+            }
+        }
+    }
+}
